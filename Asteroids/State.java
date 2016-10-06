@@ -1,0 +1,3 @@
+enum State{
+  HOME, CONTROLS, GAME, GAME_OVER
+};

@@ -1,0 +1,6 @@
+C:\Users\Jeffrey Karger\Desktop\scrublords\GameObject\FileChecker\bin\Debug\FileChecker.exe.config
+C:\Users\Jeffrey Karger\Desktop\scrublords\GameObject\FileChecker\bin\Debug\FileChecker.exe
+C:\Users\Jeffrey Karger\Desktop\scrublords\GameObject\FileChecker\bin\Debug\FileChecker.pdb
+C:\Users\Jeffrey Karger\Desktop\scrublords\GameObject\FileChecker\obj\Debug\FileChecker.csprojResolveAssemblyReference.cache
+C:\Users\Jeffrey Karger\Desktop\scrublords\GameObject\FileChecker\obj\Debug\FileChecker.exe
+C:\Users\Jeffrey Karger\Desktop\scrublords\GameObject\FileChecker\obj\Debug\FileChecker.pdb

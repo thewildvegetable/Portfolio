@@ -1,0 +1,329 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Storage;
+using Microsoft.Xna.Framework.GamerServices;
+
+namespace BoatGame
+{
+    enum Directions
+    {
+        left,
+        right,
+        up,
+        down,
+        idle,
+    }
+    //Charles Emmerich
+    class Player : Object
+    {
+        private string name;
+        private float health;
+        private int currency;
+        private float fuel;
+        private int crew;
+        private bool docked;
+        private Inventory inventory;
+        private Texture2D image;
+        private Directions direction;
+
+        //To the person who put everything as a property on a single line: for god's sake PLEASE never do that again.
+        public Enum Direction
+        {
+            get { return direction; }
+        }
+        public int XPos
+        {
+            get { return rekt.X; }
+            set { rekt.X = value; }
+        }
+        public int YPos
+        {
+            get { return rekt.Y; }
+            set { rekt.Y = value; }
+        }
+        public float Fuel
+        {
+            get { return fuel; }
+        }
+        public int Currency
+        {
+            get { return currency; }
+        }
+        public float Health
+        {
+            get { return health; }
+        }
+        public int Crew
+        {
+            get { return crew; }
+        }
+        public bool Docked
+        {
+            get { return docked; }
+            set { docked = value; }
+        }
+        public Inventory Inventory
+        {
+            get { return inventory; }
+        }
+        public String Name
+        {
+            get { return name; }
+        }
+        public Texture2D Image
+        {
+            get { return image; }
+            set { image = value; }
+        }
+
+        public Player(String name, Rectangle rect) : base(rect)
+        {
+            this.name = name;
+            docked = true;
+            fuel = 100f;
+            health = 100f;
+            currency = 0;
+            crew = 0;
+            inventory = new Inventory(0);
+            this.image = null;
+
+            //initialize enum
+            type = ObjectType.player;
+        }
+
+        //moves the character
+        //10 is just a placeholder
+        public States UpdateLocation(KeyboardState keyboard, List<Object> objects, States currentState)
+        {
+            direction = Directions.idle;
+            //check if the keyboard will move the player
+            if(keyboard.IsKeyDown(Keys.A))
+            {
+                rekt.X -= 2;
+                direction = Directions.left;
+                
+                //check for intersection
+                for (int i = 0; i < objects.Count; i++)
+                {
+                    //check if picking up the player himself
+                    if (objects.ElementAt<Object>(i) == this)
+                    {
+                        //leave empty. just insures the player isnt checking whether it intersected with itself
+                    }
+                    else
+                    {
+                        //check if intersection is occuring
+                        if (this.rekt.Intersects(objects.ElementAt<Object>(i).Rectangle))
+                        {
+                            //return the player to its position before moving
+                            rekt.X += 2;
+
+                            //check if the object is an island
+                            if(objects.ElementAt<Object>(i).IsIsland())
+                            {
+                                currentState = States.docked;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if(keyboard.IsKeyDown(Keys.D))
+            {
+                rekt.X += 2;
+                direction = Directions.right;
+
+                //check for intersection
+                for (int i = 0; i < objects.Count; i++)
+                {
+                    //check if picking up the player himself
+                    if (objects.ElementAt<Object>(i) == this)
+                    {
+                        //leave empty. just insures the player isnt checking whether it intersected with itself
+                    }
+                    else
+                    {
+                        //check if intersection is occuring
+                        if (this.rekt.Intersects(objects.ElementAt<Object>(i).Rectangle))
+                        {
+                            //return the player to its position before moving
+                            rekt.X -= 2;
+
+                            //check if the object is an island
+                            if (objects.ElementAt<Object>(i).IsIsland())
+                            {
+                                currentState = States.docked;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (keyboard.IsKeyDown(Keys.W)) 
+            {
+                rekt.Y -= 2;
+                direction = Directions.up;
+
+                //check for intersection
+                for (int i = 0; i < objects.Count; i++)
+                {
+                    //check if picking up the player himself
+                    if (objects.ElementAt<Object>(i) == this)
+                    {
+                        //leave empty. just insures the player isnt checking whether it intersected with itself
+                    }
+                    else
+                    {
+                        //check if intersection is occuring
+                        if (this.rekt.Intersects(objects.ElementAt<Object>(i).Rectangle))
+                        {
+                            //return the player to its position before moving
+                            rekt.Y += 2;
+
+                            //check if the object is an island
+                            if (objects.ElementAt<Object>(i).IsIsland())
+                            {
+                                currentState = States.docked;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if(keyboard.IsKeyDown(Keys.S))
+            {
+                rekt.Y += 2;
+                direction = Directions.down;
+
+                //check for intersection
+                for (int i = 0; i < objects.Count; i++)
+                {
+                    //check if picking up the player himself
+                    if (objects.ElementAt<Object>(i) == this)
+                    {
+                        //leave empty. just insures the player isnt checking whether it intersected with itself
+                    }
+                    else
+                    {
+                        //check if intersection is occuring
+                        if (this.rekt.Intersects(objects.ElementAt<Object>(i).Rectangle))
+                        {
+                            //return the player to its position before moving
+                            rekt.Y -= 2;
+
+                            //check if the object is an island
+                            if (objects.ElementAt<Object>(i).IsIsland())
+                            {
+                                currentState = States.docked;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //return the enum so we know if the boat docked
+            return currentState;
+        }
+
+        public void Draw(SpriteBatch spriteBatch, Color color)
+        {
+            if (direction == Directions.left)
+                //spriteBatch.Draw(image, rekt, rekt, Color.White, 0, new Vector2(0, 0), SpriteEffects.FlipHorizontally, 0);
+                spriteBatch.Draw(image, rekt, Color.White);
+            if (direction == Directions.right)
+                spriteBatch.Draw(image, rekt, Color.White);
+            if(direction == Directions.up || direction == Directions.down || direction == Directions.idle)
+                spriteBatch.Draw(image, rekt, Color.White);
+
+        }
+
+        //increments or decrements player currency
+        //if the wanted decrement puts currency below 0 returns absolute value of the result (doesn't do the decrement)
+        //returns -1 elsewise
+        public int changeCurrency(int num)
+        {
+            if(num > 0)
+            {
+                currency += num;
+                return -1;
+            }
+
+            if(num < 0 && currency + num > -1)
+            {
+                currency += num;
+                return -1;
+            }
+
+            return (num + currency)*-1;
+        }
+
+        //increments/decrements fuel
+        //restricts amount to between 0 and 100
+        public void changeFuel(float num)
+        {
+            if(num > 0)
+            {
+                fuel += num;
+                if(fuel > 100)
+                    fuel = 100;
+            }
+            if(num < 0)
+            {
+                fuel += num;
+                if(fuel < 0)
+                    fuel = 0;
+            }
+        }
+
+        //changes number of crew
+        //returns false if decrement results in 0 or negative crew
+        //returns true elsewise
+        public bool changeCrew(int num)
+        {
+            if(num > 0)
+            {
+                crew += num;
+                return true;
+            }
+
+            if(num < 0 && crew - num > 0)
+            {
+                crew += num;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //increments/decrements player health
+        public void changeHealth(int num)
+        {
+            if (num > 0)
+            {
+                health += num;
+                if (health > 100)
+                    health = 100;
+            }
+
+            if (num < 0)
+            {
+                health += num;
+                if (health < 0)
+                {
+                    health = 0;
+                    //string durr = "yousuck";
+                    //hypotheticalmethod.YouDied(durr);
+                }
+            }
+        }
+
+    }
+}
