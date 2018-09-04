@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+ canvas {  
+  margin: auto;
+  text-align: center; 
+}
+
+#skins {
+    display: none;
+}
+
+#game {
+    display: none;
+    text-align: center;
+    
+}
+
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+}
+.skinDisplay{
+    flex: 1;
+    text-align: center;
+}
+
+#lobby{
+    margin: 0 auto;
+    text-align: center;
+    height: 750px;
+    width: 30%;
+    background-color: rgb(255,255,255,.75);
+}
+
+#roomSelection{
+    list-style: none;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.owned{
+    background-color: rgb(128,128,128);
+}
+
+.equipped{
+    background-color: rgb(252,128,128);
+}
+
+.canvasImage {
+    display: none;
+}
+
+#unsuccessfulEquip{
+    position: fixed;
+    display: none;
+    top: 40%;
+    left: 40%;
+    width: 30%;
+    height: 30%;
+    background-color: rgb(0,0,0);
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+#unsuccessfulEquip button{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+#ad1{
+    float: left;
+    width: 128px;
+    height: 500px;
+    padding-left: 20px;
+}
+
+#ad2{
+    position:absolute;
+    left: 20px;
+    top: 660px;
+    height: 128px;
+    width: 700px;
+}
+
+.movingBG{
+    background: url("../assets/sprites/Scroll.png") repeat;
+    -webkit-animation: scrolling 2s linear infinite;
+    -moz-animation: scrolling 2s linear infinite;
+    -o-animation: scrolling 2s linear infinite;
+    animation: scrolling 2s linear infinite;
+}
+
+.staticBG{
+    background: url("../assets/sprites/Scroll.png") repeat; 
+}
+
+@-webkit-keyframes scrolling {
+  from{
+      background-position: 0 0;
+  }
+  to{
+      background-position: 105% 105%;
+  }
+}

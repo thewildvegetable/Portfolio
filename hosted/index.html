@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/assets/bundle.js"></script>
+  </head>
+  <body class="movingBG">
+    <img class = "ad" id= "ad1" src = "" />
+     <section id="lobby">
+      <section id="roomSelection">
+          <input type="text" id="room_name_input" placeholder="Enter Room Name...">
+          <button type="button" id="create_room_button">Create Room</button>
+          <button type="button" id="chooseSkinButton">Skins</button>
+          <ul id="lobby_list">
+          </ul>
+      </section>
+      <section id = "skins">
+          <form>
+              <section class = "grid">
+                  <section class = "skinDisplay" id="skin1">
+                      <p><img height="64" width="64" class="skin" src="/assets/skins/skin1.png"/></p>
+                      <input type="radio" name="skin" value="skin1">
+                  </section>
+                  <section class = "skinDisplay" id="skin2">
+                      <p><img height="64" width="64" class="skin" src="/assets/skins/skin2.png"/></p>
+                      <input type="radio" name="skin" value="skin2">
+                  </section>
+                  <section class = "skinDisplay" id="skin3">
+                      <p><img height="64" width="64" class="skin" src="/assets/skins/skin3.png"/></p>
+                      <input type="radio" name="skin" value="skin3">
+                  </section>
+              </section>
+              <button type="button" id="buyButton">Buy</button>
+              <button type="button" id="equipButton">Equip</button>
+              <button type="button" id="lobbyButton">Lobby</button>
+          </form>
+          <p>Note: buying or equipping a skin only lasts for the current session and is lost on refresh</p>
+      </section>
+    </section>
+    <section id="unsuccessfulEquip">
+        <p>Couldn't equip selected skin, you don't own it</p>
+        <button type="button" id="closeButton">Okay</button>
+    </section>
+    
+    <section id="game">
+        <canvas id="canvas" height="704" width="704">Please use an HTML 5 browser</canvas>
+        <div id="debug" style="display: none;">You are the host!</div>
+    </section>
+    <img class = "ad" id= "ad2" src = "" />
+    
+    <img id="playerImage" class="canvasImage" src="assets/sprites/Castles.png"/>
+    <img id="createStructImage" class="canvasImage" src="assets/sprites/CreateAStruct.png"/>
+    <img id="shieldImage" class="canvasImage" src="assets/sprites/Shield.png"/>
+    <img id="field" class="canvasImage" src="assets/sprites/Field1.png"/>
+    <img id="farmImage" class="canvasImage" src="assets/sprites/Farms.png"/>
+    <img id="attackImage" class="canvasImage" src="assets/sprites/BlackSmith.png"/>
+    <img id="emptyLotImage" class="canvasImage" src="assets/sprites/EmptyLot.png"/>
+    <img id="pannels" class="canvasImage" src="assets/sprites/Pannels1.png"/>
+    <img id="pannels2" class="canvasImage" src="assets/sprites/Pannels2.png"/>
+    <img id="attacks" class="canvasImage" src="assets/sprites/Attacks.png"/>
+    <img id="ready" class="canvasImage" src="assets/ready.png"/>
+    <img id="readyPress" class="canvasImage" src="assets/readyPress.png"/>
+    <img id="leave" class="canvasImage" src="assets/leave.png"/>
+    <img id="crown" class="canvasImage" src="assets/sprites/CrownIcon.png"/>
+    <img id="skull" class="canvasImage" src="assets/sprites/SkullIcon.png"/>
+  </body>
+</html>
