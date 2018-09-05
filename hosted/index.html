@@ -5,39 +5,91 @@
     <link rel="stylesheet" href="/assets/style.css">
     <script src="/socket.io/socket.io.js"></script>
     <script src="/assets/bundle.js"></script>
+      <style>
+          #NavBar{
+              position: fixed;
+              width: 100%;
+              min-height: 50px;
+              background-color: #DDE;
+              text-align:center;
+          }
+          .content{
+              padding-right: 50px;
+              margin: 0 auto;
+          }
+          body{
+            background-color:#ffffff;
+            font-size: 18px;
+            color: black;
+            font-family: Arial, helvetica, sans-serif;
+            background-color: #EFEBE9;
+          }
+          footer{
+              font-size: 12px;
+              left: 45%;
+              text-align: center;
+              margin: 0 auto;
+              position: absolute;
+              top: 90%;
+          }
+          #logoTitle{
+              position: fixed;
+              left: 95%;
+              top:0%;
+              float: right;
+          }
+      </style>
   </head>
-  <body class="movingBG">
-    <img class = "ad" id= "ad1" src = "" />
-     <section id="lobby">
-      <section id="roomSelection">
-          <input type="text" id="room_name_input" placeholder="Enter Room Name...">
-          <button type="button" id="create_room_button">Create Room</button>
-          <button type="button" id="chooseSkinButton">Skins</button>
-          <ul id="lobby_list">
-          </ul>
-      </section>
-      <section id = "skins">
-          <form>
-              <section class = "grid">
-                  <section class = "skinDisplay" id="skin1">
-                      <p><img height="64" width="64" class="skin" src="/assets/skins/skin1.png"/></p>
-                      <input type="radio" name="skin" value="skin1">
-                  </section>
-                  <section class = "skinDisplay" id="skin2">
-                      <p><img height="64" width="64" class="skin" src="/assets/skins/skin2.png"/></p>
-                      <input type="radio" name="skin" value="skin2">
-                  </section>
-                  <section class = "skinDisplay" id="skin3">
-                      <p><img height="64" width="64" class="skin" src="/assets/skins/skin3.png"/></p>
-                      <input type="radio" name="skin" value="skin3">
-                  </section>
-              </section>
-              <button type="button" id="buyButton">Buy</button>
-              <button type="button" id="equipButton">Equip</button>
-              <button type="button" id="lobbyButton">Lobby</button>
-          </form>
-          <p>Note: buying or equipping a skin only lasts for the current session and is lost on refresh</p>
-      </section>
+  <body>
+    <div id="NavBar">
+        <span class = "content">About Me</span>
+        <span class = "content">Portfolio</span>
+        <span class = "content">Contact Me</span>
+        <span class = "content">Resume</span>
+    </div>
+    <img id="logoTitle" src="logo.png" alt="logo" title="JK Code" height="50" width="50"/>
+      <br>
+    <section id="About">
+      <h2 class="sectionHead">Who Am I?</h2>
+			<p>I am Jeffrey Karger, a fifth year Game Design and Development student at Rochester
+                Institute of Technology. I'm also a Software Developer with proficiency in Javascript/ES6/ES7, Websockets, C#, C++, Node.js, HTML, and CSS</p>
+            <p>I spend most of my free time exploring the various games in the world, mainly RPG games, and playing in a D&D campaign.
+			When I am not working my through an RPG, I am typically practicing competitive Pokemon,
+			usually in the Video Game Championship format, or supporting League of Legends.</p>
+			<p>When I am not playing games or making games, I am typically practicing and refining
+			my martial arts capabilities. Usually, I am practicing Tae-Kwon-Do which I have been
+			training in for	over 10 years and received my 3rd degree black belt in back in June 2014.</p>
+			<p>The remainder of my time is used to further my understanding of programming and the world
+			in general. I have an appetite for knowledge and feeding it is one of my favorite things to do,
+			it is part of why I chose to attend RIT.</p>
+			<h2 class="sectionHead">Why Am I A Good Fit For Your Company?</h2>
+			<p>Are you looking for a knowledgeable worker with amazing work ethic? Are you looking for someone
+			who can make almost any meeting time or work time work in his schedule? Do you need a worker who can
+			get along with almost anybody? Do you need a worker who will not stop trying to solve a problem until
+			he is told not to stop or it proves to be a physical impossibility to achieve?  If your answer to any
+			of these questions is yes, it is worth it to you to	consider hiring me, Jeffrey Karger, to your workforce
+			so I can help your company on its quest to be the very best, like no company ever was.</p>
     </section>
+    
+    <section id="Portfolio">
+        
+    </section>
+      
+    <section id="Contact">
+        <section class="sectionHead">
+			<h2>Contact Information</h2>
+			<p class="contact">Email: whichazelnj13 @(AT/at) aol.com</p>
+			<p class="contact">Phone: 862-251-2051</p>
+		</section>
+    </section>
+      
+    <section id="Resume">
+        
+    </section>
+    
+    <footer>
+        <p><strong>Copyright 2018</strong> Jeffrey Karger</p>
+        <p><cite>All rights reserved</cite></p>
+    </footer>
   </body>
 </html>
