@@ -4,10 +4,12 @@
 	min-height: 50px;
 	background-color: #DDE;
 	text-align:center;
+    font-size: 24px;
 }
 .contentButton{
 	padding-right: 50px;
 	margin: 0 auto;
+    line-height: 50px;
 }
 body{
 	background-color:#ffffff;
@@ -20,12 +22,7 @@ body{
 	font-family: Arial, helvetica, sans-serif;
 	background-color: #EFEBE9;
 }
-footer{
-	font-size: 12px;
-	text-align: center;
-	margin: 0 auto;
-	min-height: 800px;
-}
+
 #logoTitle{
 	position: fixed;
 	left: 95%;
@@ -41,6 +38,17 @@ p{
 	width: 80%;
 	text-align: left;
 	margin: 0 auto;
+}
+
+footer{
+	font-size: 12px;
+	text-align: center;
+	margin: 0 auto;
+	min-height: 800px;
+}
+
+footer p{
+    text-align: center;
 }
 
 .sectionHead{
