@@ -1,8 +1,6 @@
 const http = require('http');
 const path = require('path');
 const express = require('express');
-const socketio = require('socket.io');
-const setupSockets = require('./sockets.js');
 
 const port = process.env.PORT || process.env.NODE_PORT || 3000;
 
@@ -16,11 +14,6 @@ app.get('/', (req, res) => {
 });
 
 const server = http.createServer(app);
-
-const io = socketio(server);
-
-// pass our socket server to our socket function
-setupSockets(io);
 
 // start listening for traffic
 server.listen(port, (err) => {

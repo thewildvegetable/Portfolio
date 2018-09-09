@@ -1,20 +1,68 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Do Hyeon', sans-serif;
+#NavBar{
+	position: fixed;
+	width: 100%;
+	min-height: 50px;
+	background-color: #DDE;
+	text-align:center;
+}
+.contentButton{
+	padding-right: 50px;
+	margin: 0 auto;
+}
+body{
+	background-color:#ffffff;
+	font-size: 18px;
+	color: black;
+	font-family: Arial, helvetica, sans-serif;
+	background-color: #EFEBE9;
+}
+footer{
+	font-size: 12px;
+	text-align: center;
+	margin: 0 auto;
+	min-height: 800px;
+}
+#logoTitle{
+	position: fixed;
+	left: 95%;
+	top:0%;
+	float: right;
 }
 
-canvas {  
-  margin: auto;
-  text-align: center; 
+.portfolioPiece img {
+	cursor: pointer;
 }
 
-.grid{
-    display: flex;
-    flex-wrap: wrap;
-}
-.projectDisplay{
-    flex: 1;
-    text-align: center;
+p{
+	width: 80%;
+	text-align: left;
+	margin: 0 auto;
 }
 
+.sectionHead{
+	font-weight: bold;
+	color: #424242;
+	font-size: 36px;
+	text-align: center;
+	background-color: #009688;
+    border-style: solid;
+    border-width: 1px;
+    width: 100%;
+}
+
+p img{
+	text-align: center;
+	margin-left: 15%;
+}
+
+#PortfolioContent{
+    display: none;
+}
+
+#ContactContent{
+    display: none;
+}
+
+#ResumeContent{
+    display: none;
+}

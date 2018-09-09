@@ -27,9 +27,7 @@
   },
   "homepage": "https://github.com/thewildvegetable/Portfolio#readme",
   "dependencies": {
-    "socket.io": "^2.0.4",
-    "express": "^4.15.2",
-    "xxhashjs": "^0.2.2"
+    "express": "^4.15.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
