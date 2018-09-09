@@ -52,7 +52,7 @@ p{
 
 p img{
 	text-align: center;
-	margin-left: 15%;
+    margin: 0 auto;
 }
 
 #PortfolioContent{
@@ -65,4 +65,12 @@ p img{
 
 #ResumeContent{
     display: none;
+}
+
+.portfolioPiece{
+    display: none;
+}
+
+#About{
+    text-decoration: underline;
 }
