@@ -11,12 +11,13 @@ let showdownButton;
 let dynamiteButton;
 let idleButton;
 
-//hide current main content
+//hide current content
 const hideContent = () => {
     let content = document.getElementsByClassName("content");
     for (let i = 0; i < content.length; i++){
         content[i].style.display = "none";
     }
+    hideProject();
 };
 
 //erase all underlines

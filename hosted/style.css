@@ -13,6 +13,10 @@ body{
 	background-color:#ffffff;
 	font-size: 18px;
 	color: black;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 	font-family: Arial, helvetica, sans-serif;
 	background-color: #EFEBE9;
 }
@@ -73,4 +77,8 @@ p img{
 
 #About{
     text-decoration: underline;
+}
+
+.hiddenContent{
+    margin-top: 30px;
 }

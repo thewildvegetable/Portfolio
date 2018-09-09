@@ -13,12 +13,13 @@ var showdownButton = void 0;
 var dynamiteButton = void 0;
 var idleButton = void 0;
 
-//hide current main content
+//hide current content
 var hideContent = function hideContent() {
     var content = document.getElementsByClassName("content");
     for (var i = 0; i < content.length; i++) {
         content[i].style.display = "none";
     }
+    hideProject();
 };
 
 //erase all underlines
