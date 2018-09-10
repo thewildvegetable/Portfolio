@@ -39,20 +39,20 @@
     <section id="PortfolioContent" class = "content hiddenContent">
             <div id="projectClick" class = "sectionHead">Click of Clans</div>
             <section class = "portfolioPiece" id = "portfolioClick">
-                <p><a href="https://click-of-clans.herokuapp.com"><img src="/assets/Click.png" alt="Game Screen" width="800" height="600"></a></p>
+                <p><a href="https://click-of-clans.herokuapp.com"><img src="/assets/Click.PNG" alt="Game Screen" width="800" height="600"></a></p>
                 <p>Click of Clans is an online multiplayer strategy game that allows players to pit their castles against each other to try and be the last kingdom standing developed in my Real-Time Interactive Media class in a team with Keegan Taylor and Alexander Woodward.  This project was done over the course of 1 month.</p>
                 <p>In Click of Clans, you are battling against up to 3 other players in a simple, click based strategy game.  The object of the game is to build structures in the 3 lanes leading to your castle to help you generate population to use to destroy the opposing castles.  You win the game by being the last castle standing</p>
                 <p>During the development of Click of Clans, I was in charge of the Client to Host server relay via websockets.  This involved sending every regular Client's interactions through the main server to the Host so the information could be processed Host-side before sending the information back out to all the Clients in the game.  Additionally, I created the ad-system in the game, making quick jokey ads that the server would send to all users on initial connection.  I also made a skin-purchasing system to allow players to "purchase" skins and equip them using the server to validate skin ownership.  to follow this up, I added the ability to use your equipped skin in game.  Lastly, I wrote in-game client side functionality, such as the ability to click on structures, the draw functionality to put visuals on the screen and the Game State functionality to start and stop the game.</p>
             </section>
             <div id="projectBump" class = "sectionHead">Web Bumper Cars</div>
             <section class = "portfolioPiece" id = "portfolioBump">
-                <p><a href="https://realtimeproject2.herokuapp.com"><img src="/assets/Bump.png" alt="Game Screen" width="800" height="600"></a></p>
+                <p><a href="https://realtimeproject2.herokuapp.com"><img src="/assets/Bump.PNG" alt="Game Screen" width="800" height="600"></a></p>
                 <p>Web Bumper Cars is a project I made in my Real-Time Interactive Media class using websockets created in the span of 3 weeks.  The idea behind the game is that its a game that anyone can join with their friends to play together when they want to.  Everyone controls a circle and uses the arrow keys to move around the screen, bumping into each other and the walls, as they try to gather green squares to earn points.  The game lasts as long as desired and can be a fun short distraction.</p>
                 <p>If I were to continue working on this, I would add in server-side score storage to have persistent scores that are sent to new players on join.  Additionally, I would try and tweak the collision formula to try and get a more elastic bounce.</p>
             </section>
             <div id="projectShowdown" class = "sectionHead">Pokemon Showdown Usage Stats Visualizer</div>
             <section class = "portfolioPiece" id = "portfolioShowdown">
-                <p><a href="https://showdownusage.herokuapp.com/"><img src="/assets/Showdown.png" alt="Game Screen" width="800" height="600"></a></p>
+                <p><a href="https://showdownusage.herokuapp.com/"><img src="/assets/Showdown.PNG" alt="Game Screen" width="800" height="600"></a></p>
                 <p>The Pokemon Showdown Usage Stats Visualizer is a project I made in my Rich Media 1 class using the oakdex-pokedex and request.js apis to pull information from Pokemon Showdown's text-file based usage statistics storage system and interpret into visual and usable data created in the span of 3 weeks.  The application functions by pulling the text file for the chosen format from Pokemon Showdown's storage system and interpreting it server-side.  The top 20 most used pokemon from the interpreted data is then sent to the oakdex api to acquire an image of the pokemon and these 20 are then placed onto the screen.  You can then click on a pokemon to see the abilities and moves it can have, as well as click on an ability or move for the details of what it does.</p>
                 <p>The biggest difficulty faced during this project was dealing with the inefficient storage method that Pokemon Showdown uses to store its usage information, individual txt files for each format for each month, often with multiple txt files for different areas of the competitive ladder for a single format.  This is to say nothing of the inconsistent updates to the storage with a month's usage info often being added 2+ months after the month changes.  To get around this, I unfortunately had to pick a specific month to get all my usage statistics from and could only use the base, low ladder usage stats files.  The other issue faced during development was that the oakdex-pokedex api could only handle 10 requests from a single source at a time, so I had to recursively request information from it as it sent data back to avoid losing any data and to allow more than 1 user at once.  Additionally, the api couldn't parse different forms for a single pokemon so things like Mega-Charizard-X and Mega Charizard-Y would simply appear as base Charizard.  If I were to go back and improve this project, I would try and figure out a system to determine the most recent month of usage data stored on the Pokemon Showdown site and grab that data.  I would also try to find a different api to handle interpreting the data parsed from the Usage Stats text files.</p>
             </section>
@@ -80,6 +80,8 @@
         <section class="sectionHead">
 			<p>Contact Information</p>
         </section>
+        <br>
+        <br>
         <p class="contact">Email: whichazelnj13 @(AT/at) aol.com</p>
         <p class="contact">Phone: 862-251-2051</p>
     </section>
