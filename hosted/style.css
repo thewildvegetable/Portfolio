@@ -90,3 +90,16 @@ p img{
 .hiddenContent{
     margin-top: 30px;
 }
+
+.leftResumeHeader{
+    font-weight: bold;
+
+}
+
+.rightResumeHeader{
+    font-weight: bold;
+}
+
+ul{
+    padding-left: 12%;
+}
