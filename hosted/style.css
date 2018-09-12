@@ -79,6 +79,10 @@ p img{
     display: none;
 }
 
+#ContactContent p{
+    text-align: center;
+}
+
 .portfolioPiece{
     display: none;
 }
